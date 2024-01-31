@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> To Do List</title>
+    <link rel="stylesheet" href="css/estilo.css"> 
+</head>
+<body>
+    <!--Encabezado de la pagina-->
+    <h1>To Do List</h1>
+    <div id="stats">
+        <!--Tareas pendiente: 5 tareas completadas: 3-->
+    </div>
+
+    <!--Formulario para añadir tareas-->
+    <form action="#" id="userInput">
+        <input type="text" placeholder="Escribe tu tarea aqui..." autofocus>
+        <input type="submit" value="+" id="addBtn">
+    </form>
+    <!--Contenido de la lista de tarea-->
+    <div id="list" class="list-container">
+
+    </div>
+   
+    <footer>
+        <!--en este apartado pondremos la informacion a pie de pagina-->
+        <p>Desarrollo de Aplicaciones con Tecnología Web | Manuel Vargas
+            Fecha: 31/1/2024</p>
+            <p id="fecha"></p>
+    </footer>
+     <!--Inclucion del archivo javascript -->
+     <script src="js/toDo.js"></script>
+
+     <!--script para hacer fecha-->
+     <script>
+        //obtener la fecha actualizada
+        var fechaActual = new Date;
+
+        //obtener lemenento del dom
+        var fechaElemento = document.getElementById("fecha");
+
+        //formato fecha "dd/mm/aaaa que utilizamos"
+        var formatoFecha = fechaActual.getDate() + '/' + (fechaActual.getMonth() < 10 ? '0' : '') + (fechaActual.getMonth() +1) + '/' + fechaActual.getFullYear();
+
+        //asignamos fecha y elemento
+        fechaElemento.innerHTML = "fecha:"+ formatoFecha;
+     </script>
+
+    
+
+    
+</body>
+</html>
